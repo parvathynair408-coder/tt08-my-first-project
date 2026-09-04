@@ -1,20 +1,9 @@
-<!---
-
-This file is used to generate your project datasheet. Please fill in the information below and delete any unused
-sections.
-
-You can also include images in this folder and reference them in the markdown. Each image must be less than
-512 kb in size, and the combined size of all images must be less than 1 MB.
--->
+# SPI Master Controller ASIC
 
 ## How it works
-
-Explain how your project works
+This SPI Master Controller converts byte-wide parallel input data into a serial bitstream over MOSI while generating the corresponding SPI clock (SCLK) and active-low chip select (CS_N). Incoming serial data from MISO is sampled and latched into lower output lines.
 
 ## How to test
-
-Explain how to use your project
-
-## External hardware
-
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+1. Set rst_n to 0 to reset the internal state machine, then release to 1.
+2. Provide an 8-bit parallel byte on ui_in[7:0].
+3. Monitor uo_out[0] (SCLK) and uo_out[1] (MOSI) to observe serial transmission.
