@@ -12,21 +12,13 @@ module tt_um_example (
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
     output wire [7:0] uio_out,  // IOs: Output path
-    output wire [7:0] uio_oe,   // IOs: Enable path (1 = output, 0 = input)
-    input  wire       ena,      // always 1 when the design is powered
+    output wire [7:0] uio_oe,   // IOs: Enable path
+    input  wire       ena,      // always 1 when powered
     input  wire       clk,      // clock
     input  wire       rst_n     // reset_n - low to reset
 );
 
-    // Pin Assignments:
-    // ui_in[7:0] -> TX Data Byte to transmit
-    // uio_in[0]  -> MISO (Master In Slave Out)
-    // uo_out[0]  -> SCLK (Serial Clock)
-    // uo_out[1]  -> MOSI (Master Out Slave In)
-    // uo_out[2]  -> CS_N (Chip Select Active Low)
-    // uo_out[3]  -> Busy Flag
-    // uo_out[7:4]-> Received RX Data (lower 4 bits)
-
+    // Pin Assignments
     wire [7:0] tx_data = ui_in;
     wire       miso    = uio_in[0];
 
@@ -39,12 +31,11 @@ module tt_um_example (
     reg [2:0]  bit_cnt;
     reg [3:0]  clk_divider;
 
-    // Fixed IO direction: All uo_out active, uio pins set cleanly
+    // Fixed IO direction: All uo_out active
     assign uio_oe  = 8'b00000000;
     assign uio_out = 8'b00000000;
     assign uo_out  = {rx_reg[3:0], busy_reg, cs_n_reg, mosi_reg, sclk_reg};
 
-    localtype_state;
     reg [1:0] state;
     localparam IDLE  = 2'b00;
     localparam START = 2'b01;
@@ -86,7 +77,7 @@ module tt_um_example (
                     if (clk_divider == 4'h7) begin
                         sclk_reg <= ~sclk_reg;
                         if (sclk_reg == 1'b0) begin
-                            mosi_reg  <= shift_reg[7];
+                            mosi_reg <= shift_reg[7];
                         end else begin
                             shift_reg <= {shift_reg[6:0], miso};
                             if (bit_cnt == 0) begin
