@@ -7,5 +7,5 @@
   "CLOCK_PORT": "clk",
   "DIE_AREA": "0 0 161.28 111.52",
   "FP_SIZING": "absolute",
-  "RT_MAX_LAYER": "met4"
+  "MAX_ROUTING_LAYER": "met4"
 }
