@@ -8,5 +8,5 @@
   "DIE_AREA": "0 0 161.28 111.52",
   "FP_SIZING": "absolute",
   "MAX_ROUTING_LAYER": "met4",
-  "FP_PIN_ORDER_CFG": "dir::pin_order.cfg"
+  "FP_PDN_MULTILAYER": false
 }
