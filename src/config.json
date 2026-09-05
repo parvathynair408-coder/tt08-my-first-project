@@ -4,5 +4,7 @@
     "dir::tt_um_example.v"
   ],
   "CLOCK_PERIOD": 20.0,
-  "CLOCK_PORT": "clk"
+  "CLOCK_PORT": "clk",
+  "DIE_AREA": "0 0 161.28 111.52",
+  "FP_SIZING": "absolute"
 }
