@@ -1,19 +1,14 @@
-# Tiny Tapeout project information
 yaml_version: 6
 
 project:
   title:        "SPI Master Controller"
   author:       "Parvathy Nair Karippanal"
   discord:      ""
-  description:  "A configurable SPI Master Controller with clock prescaler for ASIC physical design."
+  description:  "A configurable SPI Master Controller for ASIC physical design."
   language:     "Verilog"
   clock_hz:     50000000
   tiles:        "1x1"
-
-  # How the project connects to the frame
-  top_module:  "tt_um_example"
-
-  # List your Verilog files here
+  top_module:   "tt_um_example"
   source_files:
     - "tt_um_example.v"
 
