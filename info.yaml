@@ -15,7 +15,7 @@ project:
 
   # List your Verilog files here
   source_files:
-    - "project.v"
+    - "tt_um_example.v"
 
 # Pinout mapping
 pinout:
