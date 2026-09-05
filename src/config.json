@@ -7,5 +7,8 @@
   "CLOCK_PORT": "clk",
   "DIE_AREA": "0 0 161.28 111.52",
   "FP_SIZING": "absolute",
-  "MAX_ROUTING_LAYER": "met4"
+  "MAX_ROUTING_LAYER": "met4",
+  "FP_DEF_TEMPLATE": "dir::../tech/sky130A/def/tt_block_1x1_pg.def",
+  "BOTTOM_ROUTING_LAYER": "met1",
+  "TOP_ROUTING_LAYER": "met4"
 }
