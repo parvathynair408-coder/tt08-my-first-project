@@ -4,8 +4,5 @@
     "dir::tt_um_example.v"
   ],
   "CLOCK_PERIOD": 20.0,
-  "CLOCK_PORT": "clk",
-  "DIE_AREA": "0 0 161.28 111.52",
-  "FP_DEF_TEMPLATE": "dir::../tt/def/tt_block_1x1.def",
-  "FP_PIN_ORDER_CFG": "dir::../tt/pin_order.cfg"
+  "CLOCK_PORT": "clk"
 }
