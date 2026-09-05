@@ -8,6 +8,5 @@
   "DIE_AREA": "0 0 161.28 111.52",
   "FP_SIZING": "absolute",
   "MAX_ROUTING_LAYER": "met4",
-  "FP_PDN_RAIL_LAYER": "met1",
-  "FP_PDN_UPPER_LAYER": "met4"
+  "FP_PDN_MULTILAYER": false
 }
